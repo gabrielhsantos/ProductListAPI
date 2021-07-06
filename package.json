@@ -4,7 +4,7 @@
   "description": "",
   "main": "/src/api/server.ts",
   "scripts": {
-    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./lib",
+    "build": "tsc --project tsconfig.json",
     "start:local": "nodemon src/api/server.ts",
     "ts:watch": "tsc --watch",
     "lint:staged": "lint-staged",
