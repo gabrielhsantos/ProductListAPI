@@ -4,6 +4,9 @@
   "description": "",
   "main": "/src/api/server.ts",
   "scripts": {
+    "db:create": "sequelize db:create luizaLabs",
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo",
     "build": "tsc --project tsconfig.json",
     "start:local": "nodemon src/api/server.ts",
     "ts:watch": "tsc --watch",
