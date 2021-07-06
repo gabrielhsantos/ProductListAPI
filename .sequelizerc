@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  'config': path.resolve('lib', 'config', 'database', 'database.js'),
-  'models-path': path.resolve('lib', 'core', 'domain', 'entities', 'models'),
-  'seeders-path': path.resolve('lib', 'core', 'infrastructure', 'seeders'),
-  'migrations-path': path.resolve('lib', 'core', 'infrastructure', 'migrations')
+  'config': path.resolve('src', 'config', 'database', 'config.js'),
+  'models-path': path.resolve('src', 'core', 'domain', 'entities', 'models'),
+  'seeders-path': path.resolve('src', 'core', 'infrastructure', 'seeders'),
+  'migrations-path': path.resolve('src', 'core', 'infrastructure', 'migrations')
 };
