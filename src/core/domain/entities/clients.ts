@@ -17,7 +17,7 @@ Client.init(
     name: {
       type: DataTypes.STRING,
     },
-    mail: {
+    email: {
       type: DataTypes.STRING,
     },
     active: {
@@ -36,7 +36,7 @@ Client.init(
     underscored: true,
     timestamps: false,
     freezeTableName: true,
-    schema: env.database.postgres.schema,
+    schema: env.database.schema,
     tableName: 'clients',
     sequelize: Container.get(databaseConnection).Connection,
     modelName: 'client',
