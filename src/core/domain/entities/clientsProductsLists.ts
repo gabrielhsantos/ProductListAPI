@@ -46,7 +46,7 @@ ClientProductList.init(
     underscored: true,
     timestamps: false,
     freezeTableName: true,
-    schema: env.database.postgres.schema,
+    schema: env.database.schema,
     tableName: 'clients_products_lists',
     sequelize: Container.get(databaseConnection).Connection,
     modelName: 'clientProductList',
