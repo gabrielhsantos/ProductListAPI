@@ -18,6 +18,7 @@
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "@providers/*": ["providers/*"],
       "@api/*": ["api/*"],
       "@config/*": ["config/*"],
       "@core/*": ["core/*"],

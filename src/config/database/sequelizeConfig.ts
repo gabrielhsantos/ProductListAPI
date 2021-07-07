@@ -8,7 +8,7 @@ class databaseConnection {
 
   constructor() {
     if (!this.connection) {
-      const postgres = env.database.postgres
+      const postgres = env.database
 
       this.connection = new Sequelize({
         database: postgres.database,
