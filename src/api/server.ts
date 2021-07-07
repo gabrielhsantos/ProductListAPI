@@ -1,6 +1,8 @@
 import 'reflect-metadata'
 import * as dotenv from 'dotenv'
-dotenv.config({ path: process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env' })
+dotenv.config({
+  path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env',
+})
 import { Container } from 'typedi'
 import { app, env, logger, databaseConnection } from '@config/index'
 
