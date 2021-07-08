@@ -1,6 +1,7 @@
 import * as express from 'express'
 import * as cors from 'cors'
 import * as routesFile from '@api/routes'
+import { errorHandler } from '@api/middlewares/errorHandler'
 import { json, text, raw, urlencoded } from 'body-parser'
 import { Route } from '@api/routes/enums'
 
@@ -24,5 +25,6 @@ app
     }),
   )
   .use(router)
+  .use(errorHandler)
 
 export { app }
