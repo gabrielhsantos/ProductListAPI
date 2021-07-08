@@ -1,4 +1,4 @@
-export interface ICreateClientDTO {
+export interface IClientDTO {
   id: number
   uuid: string
   name: string

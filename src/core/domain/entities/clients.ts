@@ -1,8 +1,9 @@
-import Client from '../repositories/clients/clientsRepository'
+import { Client } from '../repositories/clients/clientsRepository'
 import { DataTypes } from 'sequelize'
 import { Container } from 'typedi'
 import { env } from '@env/envConfig'
 import { databaseConnection } from '@config/database/sequelizeConfig'
+import { v4 as uuidv4 } from 'uuid'
 
 Client.init(
   {
@@ -13,6 +14,7 @@ Client.init(
     },
     uuid: {
       type: DataTypes.STRING,
+      defaultValue: uuidv4(),
     },
     name: {
       type: DataTypes.STRING,
@@ -43,4 +45,4 @@ Client.init(
   },
 )
 
-export default Client
+export { Client }
