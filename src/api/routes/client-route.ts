@@ -1,11 +1,12 @@
 import * as express from 'express'
-// import { Container } from 'typedi'
+import { authMiddleware } from '@api/middlewares/auth'
+import { ClientController } from '../controllers/client/clientController'
 
-// const client = Container.get(ClientController)
+const client = new ClientController()
 const clients = express.Router()
 
-clients.get('/', (req, res) => {
-  return res.status(200).end()
-})
+clients.post('/', authMiddleware, client.saveClient)
+clients.get('/', authMiddleware, client.clientsList)
+clients.get('/:id', authMiddleware, client.findClient)
 
 export { clients }

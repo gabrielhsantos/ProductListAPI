@@ -13,4 +13,4 @@ class ClientProductList extends Model implements IClientsProductsListsRepository
   async removeProduct(productId: string): Promise<void> {}
 }
 
-export default ClientProductList
+export { ClientProductList }

@@ -1,9 +1,10 @@
-import ClientProductList from '../repositories/clientsProductsLists/clientsProductsListsRepository'
-import Client from '../repositories/clients/clientsRepository'
+import { ClientProductList } from '@domain/repositories/clientsProductsLists/clientsProductsListsRepository'
+import { Client } from '@entities/clients'
 import { DataTypes } from 'sequelize'
 import { Container } from 'typedi'
 import { env } from '@env/envConfig'
 import { databaseConnection } from '@config/database/sequelizeConfig'
+import { v4 as uuidv4 } from 'uuid'
 
 ClientProductList.init(
   {
@@ -14,6 +15,7 @@ ClientProductList.init(
     },
     uuid: {
       type: DataTypes.STRING,
+      defaultValue: uuidv4(),
     },
     clientId: {
       type: DataTypes.INTEGER,
