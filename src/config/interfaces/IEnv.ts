@@ -26,4 +26,7 @@ export interface IEnv {
   providers: {
     luizaLabs: IRequester
   }
+  jwt: {
+    secret: string
+  }
 }

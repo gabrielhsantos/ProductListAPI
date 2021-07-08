@@ -1,4 +1,5 @@
 // export * from './docs/swaggerConfig'
+export * from './auth/jwt'
 export * from './database/sequelizeConfig'
 export * from './env/envConfig'
 export * from './framework/expressConfig'

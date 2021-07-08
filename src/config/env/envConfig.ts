@@ -29,6 +29,9 @@ const env: IEnv = {
       timeout: parseInt(process.env.TIMEOUT as string) || 10000,
     },
   },
+  jwt: {
+    secret: process.env.JWT_SECRET as string,
+  },
 }
 
 export { env }
