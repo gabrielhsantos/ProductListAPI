@@ -1,5 +1,5 @@
 import { StatusCodes } from 'http-status-codes'
-import { IClientsListsProductsUseCase } from '../_interfaces/IClientsProductsListsUseCases'
+import { IClientsListsProductsUseCase } from './_interfaces/IClientsProductsListsUseCases'
 import { Client } from '@core/domain/entities/clients'
 import { IClientsRepository } from '@core/domain/repositories/clients/IClientsRepository'
 

@@ -1,6 +1,6 @@
 import { StatusCodes } from 'http-status-codes'
 import { IClientsRepository } from '@domain/repositories/clients/IClientsRepository'
-import { IClientsUseCase } from '../_interfaces/IClientsUseCases'
+import { IClientsUseCase } from './_interfaces/IClientsUseCases'
 
 export class RemoveClientUseCase implements IClientsUseCase {
   constructor(private clientsRepository: IClientsRepository) {}
