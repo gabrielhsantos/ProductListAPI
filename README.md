@@ -54,6 +54,9 @@ JWT_SECRET | #LuizaLabsChallenge@GabrielSantos
 ### 🎲 Rodando o Back End (servidor)
 
 ```bash
+# Crie o banco de dados luizaLabs
+$ npm run db:create
+
 # Execute as migrations
 $ npm run db:migrate
 
