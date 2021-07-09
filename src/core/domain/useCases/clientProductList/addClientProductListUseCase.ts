@@ -1,9 +1,9 @@
 import ClientProductList from '@domain/entities/clientsProductsLists'
-import { GetProviderProductUseCase } from '@domain/useCases/clientProductList/getProviderProduct/getProviderProductUseCase'
+import { GetProviderProductUseCase } from '@core/domain/useCases/clientProductList/getProviderProductUseCase'
 import { IClientsProductsListsRepository } from '@domain/repositories/clientsProductsLists/IClientsProductsListsRepository'
 import { StatusCodes } from 'http-status-codes'
-import { IClientsListsProductsUseCase } from '../_interfaces/IClientsProductsListsUseCases'
-import { IProductInput } from '../_interfaces/IClientProductListInputs'
+import { IClientsListsProductsUseCase } from './_interfaces/IClientsProductsListsUseCases'
+import { IProductInput } from './_interfaces/IClientProductListInputs'
 import { IProviderProductResponse } from '@providers/luizaLabs/IProviderProductResponse'
 import { Client } from '@core/domain/entities/clients'
 

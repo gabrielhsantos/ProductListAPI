@@ -1,5 +1,5 @@
 import { GetProviderProducts } from '@providers/luizaLabs/getProducts'
-import { IClientsListsProductsUseCase } from '../_interfaces/IClientsProductsListsUseCases'
+import { IClientsListsProductsUseCase } from './_interfaces/IClientsProductsListsUseCases'
 import { IProviderProductResponse } from '@providers/luizaLabs/IProviderProductResponse'
 
 export class GetProviderProductUseCase implements IClientsListsProductsUseCase {

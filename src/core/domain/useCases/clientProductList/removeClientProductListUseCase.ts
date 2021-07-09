@@ -2,8 +2,8 @@ import ClientProductList from '@domain/entities/clientsProductsLists'
 import { Op } from 'sequelize'
 import { IClientsProductsListsRepository } from '@domain/repositories/clientsProductsLists/IClientsProductsListsRepository'
 import { StatusCodes } from 'http-status-codes'
-import { IClientsListsProductsUseCase } from '../_interfaces/IClientsProductsListsUseCases'
-import { IProductInput } from '../_interfaces/IClientProductListInputs'
+import { IClientsListsProductsUseCase } from './_interfaces/IClientsProductsListsUseCases'
+import { IProductInput } from './_interfaces/IClientProductListInputs'
 import { Client } from '@core/domain/entities/clients'
 
 export class RemoveClientProductListUseCase implements IClientsListsProductsUseCase {
