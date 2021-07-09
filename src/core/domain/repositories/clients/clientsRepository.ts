@@ -1,3 +1,5 @@
+import { IRemoveClientInput } from '@core/domain/useCases/client/interfaces/IRemoveClientInput'
+import { IUpdateClientInput } from '@core/domain/useCases/client/interfaces/IUpdateClientInput'
 import { Model } from 'sequelize'
 import { IClientsRepository } from './IClientsRepository'
 
@@ -22,7 +24,11 @@ export class Client extends Model implements IClientsRepository {
     return Client.findOne({ where: filter })
   }
 
-  async updateClient(email: string): Promise<void> {}
+  async updateClient(filter: object, updateClient: IUpdateClientInput): Promise<void> {
+    Client.update(updateClient, { where: filter })
+  }
 
-  async removeClient(email: string): Promise<void> {}
+  async removeClient(filter: object, removeClient: IRemoveClientInput): Promise<void> {
+    Client.update(removeClient, { where: filter })
+  }
 }

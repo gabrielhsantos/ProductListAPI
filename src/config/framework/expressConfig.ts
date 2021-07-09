@@ -25,6 +25,9 @@ app
     }),
   )
   .use(router)
+  .all('*', (req, res, next: express.NextFunction) => {
+    next({ errors: `Endpoint not found!` })
+  })
   .use(errorHandler)
 
 export { app }

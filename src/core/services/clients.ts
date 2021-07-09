@@ -1,23 +1,28 @@
 import { Client } from '@core/domain/entities/clients'
-import { ICreateClientInput } from '@core/domain/useCases/client/createClient/createClientInput'
-import { CreateClientUseCase } from '@core/domain/useCases/client/createClient/createClientUseCase'
+import { ICreateClientInput } from '@core/domain/useCases/client/interfaces/ICreateClientInput'
+import { IClientsUseCase } from '@core/domain/useCases/client/interfaces/IClientsUseCases'
+import { IUpdateClientInput } from '@core/domain/useCases/client/interfaces/IUpdateClientInput'
 
 export class ClientService {
-  constructor(private createClientUseCase: CreateClientUseCase) {}
+  constructor(private clientUseCase: IClientsUseCase) {}
 
-  async saveClient(params: ICreateClientInput): Promise<void> {
-    await this.createClientUseCase.saveClient({ ...params })
+  async saveClient(client: ICreateClientInput): Promise<void> {
+    await this.clientUseCase.saveClient!({ ...client })
   }
 
   async clientsList(email?: string): Promise<Client[]> {
-    return await this.createClientUseCase.clientsList(email)
+    return await this.clientUseCase.clientsList!(email)
   }
 
   async findClient(id: string): Promise<Client> {
-    return await this.createClientUseCase.findClient(id)
+    return await this.clientUseCase.findClient!(id)
   }
 
-  async updateClient(id: string): Promise<void> {
-    await this.createClientUseCase.findClient(id)
+  async updateClient(id: string, client: IUpdateClientInput): Promise<void> {
+    await this.clientUseCase.updateClient!(id, client)
+  }
+
+  async removeClient(id: string): Promise<void> {
+    await this.clientUseCase.removeClient!(id)
   }
 }

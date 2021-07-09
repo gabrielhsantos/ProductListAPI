@@ -3,9 +3,7 @@ import { CreateClientUseCase } from './createClientUseCase'
 import { ClientService } from '@services/clients'
 
 const clientsRepository = new Client()
-
 const createClientUseCase = new CreateClientUseCase(clientsRepository)
+const createClientService = new ClientService(createClientUseCase)
 
-const clientService = new ClientService(createClientUseCase)
-
-export { createClientUseCase, clientService }
+export { createClientService }
