@@ -50,6 +50,17 @@ DB_PASSWORD | postgres
 LUIZA_LABS_URL | http://challenge-api.luizalabs.com/api
 JWT_SECRET | #LuizaLabsChallenge@GabrielSantos
 
+**Observação**: 
+Os endpoints precisam do header *Authorization* e
+para facilitar a criação desse header, 
+pode-se utilizar do site [jwt.io](https://jwt.io/)
+inserindo o mesmo JWT_SECRET definido a cima e com o seguinte payload:
+```
+{
+  "sub": "avaliadorLuizaLabs",
+  "iat": 1516239022
+}
+```
 
 ### 🎲 Rodando o Back End (servidor)
 
