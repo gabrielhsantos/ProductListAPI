@@ -1,12 +1,15 @@
 import { Request, Response, NextFunction } from 'express'
-import { clientService } from '@core/domain/useCases/client/createClient'
+import { createClientService } from '@core/domain/useCases/client/createClient'
+import { findClientService } from '@core/domain/useCases/client/findClient'
+import { updateClientService } from '@core/domain/useCases/client/updateClient'
+import { removeClientService } from '@core/domain/useCases/client/removeClient'
 import { StatusCodes } from 'http-status-codes'
 import { clientsResponse, clientResponse, success } from '@api/mappers/successResponse'
 
 export class ClientController {
   async saveClient(req: Request, res: Response, next: NextFunction) {
     try {
-      await clientService.saveClient({ ...req.body })
+      await createClientService.saveClient({ ...req.body })
 
       return res.status(StatusCodes.CREATED).send(success('Client created!'))
     } catch (error) {
@@ -16,7 +19,7 @@ export class ClientController {
 
   async clientsList(req: Request, res: Response, next: NextFunction) {
     try {
-      const clients = await clientService.clientsList(req.query.email as string)
+      const clients = await findClientService.clientsList(req.query.email as string)
 
       const response = success('Clients', clientsResponse(clients))
 
@@ -28,7 +31,7 @@ export class ClientController {
 
   async findClient(req: Request, res: Response, next: NextFunction) {
     try {
-      const client = await clientService.findClient(req.params.id as string)
+      const client = await findClientService.findClient(req.params.id as string)
 
       const response = success('Client', clientResponse(client))
 
@@ -40,11 +43,19 @@ export class ClientController {
 
   async updateClient(req: Request, res: Response, next: NextFunction) {
     try {
-      const client = await clientService.findClient(req.params.id as string)
+      await updateClientService.updateClient(req.params.id as string, { ...req.body })
 
-      const response = success('Client', clientResponse(client))
+      return res.status(StatusCodes.OK).send(success('Client updated!'))
+    } catch (error) {
+      next(error)
+    }
+  }
 
-      return res.status(StatusCodes.OK).send(response)
+  async removeClient(req: Request, res: Response, next: NextFunction) {
+    try {
+      await removeClientService.removeClient(req.params.id as string)
+
+      return res.status(StatusCodes.OK).send(success('Client removed!'))
     } catch (error) {
       next(error)
     }

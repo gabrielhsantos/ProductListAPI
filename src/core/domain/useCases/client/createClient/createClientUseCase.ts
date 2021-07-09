@@ -1,13 +1,14 @@
 import { Client } from '../../../entities/clients'
 import { IClientsRepository } from '../../../repositories/clients/IClientsRepository'
-import { ICreateClientInput } from './createClientInput'
+import { ICreateClientInput } from '../interfaces/ICreateClientInput'
 import { StatusCodes } from 'http-status-codes'
+import { IClientsUseCase } from '../interfaces/IClientsUseCases'
 
-export class CreateClientUseCase {
+export class CreateClientUseCase implements IClientsUseCase {
   constructor(private clientsRepository: IClientsRepository) {}
 
-  async saveClient(data: ICreateClientInput) {
-    const clientAlreadyExists = await this.findClientByFilter({ email: data.email })
+  async saveClient(client: ICreateClientInput): Promise<void> {
+    const clientAlreadyExists = await this.clientsRepository.findClient({ email: client.email })
 
     if (clientAlreadyExists)
       throw {
@@ -15,30 +16,6 @@ export class CreateClientUseCase {
         errors: 'Client already exists.',
       }
 
-    await this.clientsRepository.saveClient(new Client(data))
-  }
-
-  async findClient(id: string): Promise<Client> {
-    const client = await this.findClientByFilter({ uuid: id })
-
-    if (!client)
-      throw {
-        statusCode: StatusCodes.NOT_FOUND,
-        errors: 'Client not found.',
-      }
-
-    return client
-  }
-
-  async clientsList(email?: string): Promise<Client[]> {
-    const filter = email ? { email } : {}
-
-    const clients = await this.clientsRepository.clientsList(filter)
-
-    return clients
-  }
-
-  async findClientByFilter(filter: object): Promise<Client | null> {
-    return await this.clientsRepository.findClient(filter)
+    await this.clientsRepository.saveClient!(new Client(client))
   }
 }
