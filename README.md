@@ -87,7 +87,7 @@ $ npm test
 
 >**Observação**: 
 > O *Coverage* não está em 100%,
-> Pois os testes foram feitos apenas em cima
+> pois os testes foram feitos apenas em cima
 > da integração com o endpoint do próprio desafio:
 > [LuizaLabsChallenge](https://gist.github.com/Bgouveia/9e043a3eba439489a35e70d1b5ea08ec)
 
