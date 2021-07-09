@@ -29,7 +29,7 @@ $ cd productListAPI
 $ npm install
 ```
 
-Na raiz do projeto, existe o arquivo **env-example.txt**, Nele contém as variáveis que serão utilizadas no projeto, copie seu conteúdo.
+Na raiz do projeto, existe o arquivo **env-example.txt**, nele contém as variáveis que serão utilizadas no projeto, copie seu conteúdo.
 
 Crie um arquivo também na raiz, com nome **.env** e cole as variáveis dentro.
 
