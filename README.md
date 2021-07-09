@@ -94,7 +94,7 @@ $ npm test
 ### 📦 Documentação
 
 Um arquivo com extensão .json se encontra na pasta:
-```src/config/docs```
+```src/config/docs```.
 
 O mesmo pode ser importado dentro do [Postman](https://www.postman.com/), para facilitar o acesso aos endpoints. 
 
