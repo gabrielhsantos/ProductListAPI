@@ -1,7 +1,6 @@
 import { Client } from '@core/domain/entities/clients'
-import { ICreateClientInput } from '@core/domain/useCases/client/interfaces/ICreateClientInput'
-import { IClientsUseCase } from '@core/domain/useCases/client/interfaces/IClientsUseCases'
-import { IUpdateClientInput } from '@core/domain/useCases/client/interfaces/IUpdateClientInput'
+import { ICreateClientInput, IUpdateClientInput } from '@core/domain/useCases/client/_interfaces/IClientInputs'
+import { IClientsUseCase } from '@core/domain/useCases/client/_interfaces/IClientsUseCases'
 
 export class ClientService {
   constructor(private clientUseCase: IClientsUseCase) {}

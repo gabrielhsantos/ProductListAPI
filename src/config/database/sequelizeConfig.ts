@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
 import { Service } from 'typedi'
-import { env, logger } from '@config/index'
+import { env, logger } from '@config/_index'
 
 @Service()
 class databaseConnection {

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import { StatusCodes } from 'http-status-codes'
-import { validateToken } from '@config/index'
+import { validateToken } from '@config/_index'
 
 export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
   try {

@@ -1,6 +1,6 @@
 import * as express from 'express'
 import * as cors from 'cors'
-import * as routesFile from '@api/routes'
+import * as routesFile from '@api/routes/_index'
 import { errorHandler } from '@api/middlewares/errorHandler'
 import { json, text, raw, urlencoded } from 'body-parser'
 import { Route } from '@api/routes/enums'

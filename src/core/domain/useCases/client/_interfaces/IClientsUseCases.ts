@@ -1,6 +1,5 @@
 import { Client } from '@core/domain/entities/clients'
-import { ICreateClientInput } from './ICreateClientInput'
-import { IUpdateClientInput } from './IUpdateClientInput'
+import { ICreateClientInput, IUpdateClientInput } from './IClientInputs'
 
 export interface IClientsUseCase {
   saveClient?(data: ICreateClientInput): Promise<void>
