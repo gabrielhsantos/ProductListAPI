@@ -71,10 +71,20 @@ Para rodar os testes, basta utilizar este comando via terminal/cmd:
 $ npm test
 ```
 
+>**Observação**: 
+> O *Coverage* não está em 100%,
+> Pois os testes foram feitos apenas em cima
+> da integração com o endpoint do próprio teste:
+> [LuizaLabsChallenge](https://gist.github.com/Bgouveia/9e043a3eba439489a35e70d1b5ea08ec)
+
 ### 📦 Documentação
 
 Um arquivo com extensão .json se encontra na pasta:
 ```src/config/docs```
 
 O mesmo pode ser importado dentro do [Postman](https://www.postman.com/), para facilitar o acesso aos endpoints. 
+
+Também é possível acessar a documentação da api pelo endpoint [/doc](http://localhost:3001/api/docs/) com o servidor rodando.
+
+
 
