@@ -26,6 +26,9 @@ ClientProductList.init(
     title: {
       type: DataTypes.STRING,
     },
+    brand: {
+      type: DataTypes.STRING,
+    },
     imageUrl: {
       type: DataTypes.STRING,
     },

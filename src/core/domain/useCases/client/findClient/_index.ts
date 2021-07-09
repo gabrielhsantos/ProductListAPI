@@ -6,4 +6,4 @@ const clientsRepository = new Client()
 const findClientUseCase = new FindClientUseCase(clientsRepository)
 const findClientService = new ClientService(findClientUseCase)
 
-export { findClientUseCase, findClientService }
+export { findClientService }

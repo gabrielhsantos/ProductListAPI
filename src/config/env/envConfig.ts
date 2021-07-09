@@ -1,4 +1,4 @@
-import { IEnv } from '../interfaces/IEnv'
+import { IEnv } from '../_interfaces/IEnv'
 
 const env: IEnv = {
   api: {

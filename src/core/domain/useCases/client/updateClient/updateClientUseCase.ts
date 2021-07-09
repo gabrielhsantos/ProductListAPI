@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes'
 import { IClientsRepository } from '@domain/repositories/clients/IClientsRepository'
-import { IClientsUseCase } from '../interfaces/IClientsUseCases'
-import { IUpdateClientInput } from '../interfaces/IUpdateClientInput'
+import { IClientsUseCase } from '../_interfaces/IClientsUseCases'
+import { IUpdateClientInput } from '../_interfaces/IClientInputs'
 
 export class UpdateClientUseCase implements IClientsUseCase {
   constructor(private clientsRepository: IClientsRepository) {}

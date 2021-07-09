@@ -19,10 +19,13 @@ module.exports = {
       },
       external_product_id: {
         type: Sequelize.STRING,
-        unique: true,
         allowNull: false
       },
       title: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      brand: {
         type: Sequelize.STRING,
         allowNull: false
       },

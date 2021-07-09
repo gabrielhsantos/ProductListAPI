@@ -27,7 +27,6 @@
       "@services/*": ["core/services/*"],
       "@env/*": ["config/env/*"],
       "@integrations/*": ["providers/integrations/*"],
-      "@utils/*": ["utils/*"],
       "@enums": ["api/helpers/enums"]
     }
   },
