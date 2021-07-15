@@ -49,6 +49,8 @@ DB_HOST | localhost
 DB_PASSWORD | postgres
 LUIZA_LABS_URL | http://challenge-api.luizalabs.com/api
 JWT_SECRET | #LuizaLabsChallenge@GabrielSantos
+SWAGGER_HOST | localhost:3001/api
+SWAGGER_SERVER | http://localhost:3001/api
 
 **Observação**: 
 Os endpoints precisam do header *Authorization* e
